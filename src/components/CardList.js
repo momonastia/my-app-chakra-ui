@@ -1,11 +1,4 @@
-import {
-  SimpleGrid,
-  Box,
-  Stack,
-  Button,
-  Heading,
-  Text,
-} from '@chakra-ui/react';
+import { SimpleGrid, Stack, Button, Heading, Text } from '@chakra-ui/react';
 
 const CardList = props => {
   const { cards = [] } = props;
@@ -29,7 +22,7 @@ const CardList = props => {
             {card.title}
           </Heading>
           <Text>{card.body}</Text>
-          <Button variant="outline" as="a" marginTop={[1, null, 3, 4]}>
+          <Button as="a" variant="brand" marginTop={[1, null, 3, 4]}>
             Read more
           </Button>
         </Stack>

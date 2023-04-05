@@ -7,15 +7,43 @@ import {
   VStack,
   Code,
   Grid,
-  theme,
+  extendTheme,
   Container,
   Heading,
   Divider,
+  color,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './components/ColorModeSwitcher';
 import { Logo } from './Logo';
 import Header from './components/Header';
 import CardList from './components/CardList';
+
+const theme = extendTheme({
+  colors: {
+    brand: {
+      100: 'red',
+      200: 'red',
+      300: 'red',
+      400: 'red',
+      500: 'brown',
+      600: 'brown',
+      700: 'brown',
+    },
+  },
+  components: {
+    Button: {
+      variants: {
+        brand: props => ({
+          bg: props.ColorMode === 'dark' ? 'brand.300' : 'brand.700',
+          color: 'white',
+          _hover: {
+            bg: props.ColorMode === 'dark' ? 'brand.700' : 'brand.300',
+          },
+        }),
+      },
+    },
+  },
+});
 
 const posts = [
   {
